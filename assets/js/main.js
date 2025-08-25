@@ -238,8 +238,8 @@ function renderPolicyContent() {
                 </p>
             </div>
             <div style="margin-top: 20px;">
-                <a href="downloads/ceo-ai-policy-draft.md" download class="download-btn">
-                    📄 Download Full Policy Document
+                <a href="https://drive.google.com/file/d/1sq5CugEfIA5GF8MmtefVtj14nWPWV_-q/view?usp=sharing" target="_blank" class="download-btn">
+                    📄 View Full Policy Document (PDF)
                 </a>
             </div>
         `;
