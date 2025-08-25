@@ -44,17 +44,22 @@ This dashboard addresses decision paralysis in IT governance by providing:
 - Commitment framework for accountability
 - Meeting scripts for effective facilitation
 
+## Repository
+
+**GitHub:** https://github.com/joshuamtm/ceo-governance-dashboard  
+**Live Site:** https://ceo-governance-dashboard-1756129302.netlify.app
+
 ## Quick Start
 
 ### Local Development
-1. Clone the repository
+1. Clone the repository: `git clone https://github.com/joshuamtm/ceo-governance-dashboard.git`
 2. Open `index.html` in a web browser
 3. No build process required - pure HTML/CSS/JS
 
 ### Deployment to Netlify
-1. Push to GitHub repository
-2. Connect repository to Netlify
-3. Deploy with default settings (already configured in `netlify.toml`)
+- **Automatic:** Connected to GitHub - pushes to `main` branch auto-deploy
+- **Manual:** Run `npx netlify-cli deploy --prod --dir=.`
+- **Configuration:** Settings in `netlify.toml`
 
 ## File Structure
 
