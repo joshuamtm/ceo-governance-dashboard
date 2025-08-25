@@ -16,7 +16,7 @@ function initializeDashboard() {
     // Check for hash navigation
     if (window.location.hash) {
         const section = window.location.hash.substring(1);
-        const validSections = ['dashboard', 'policy', 'brief', 'training', 'tools'];
+        const validSections = ['dashboard', 'policy', 'brief', 'training', 'framework', 'tools'];
         if (validSections.includes(section)) {
             showSection(section);
         }
@@ -44,6 +44,11 @@ function setupEventListeners() {
 
 // Show specific section
 function showSection(sectionId, updateHistory = true) {
+    // Handle legacy 'tools' section ID
+    if (sectionId === 'tools') {
+        sectionId = 'framework';
+    }
+    
     // Hide all sections
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
@@ -87,7 +92,7 @@ function renderInitialContent() {
     renderPolicyContent();
     renderBriefContent();
     renderTrainingContent();
-    renderMeetingTools();
+    renderDecisionFramework();
 }
 
 // Render priority table
@@ -472,86 +477,131 @@ function renderTrainingContent() {
     }
 }
 
-// Render meeting tools
-function renderMeetingTools() {
-    // Talking Points
-    const talkingContainer = document.getElementById('talkingPoints');
-    if (talkingContainer && dashboardData.meetingTools) {
-        let html = '';
-        dashboardData.meetingTools.talkingPoints.forEach(point => {
-            html += `
-                <div class="talking-point">
-                    <div class="talking-point-header">
-                        <span class="point-number">${point.number}</span>
-                        <span class="point-title">${point.title}</span>
-                    </div>
-                    <div class="point-content">${point.content}</div>
-                </div>
-            `;
-        });
-        talkingContainer.innerHTML = html;
-    }
-
-    // Diplomatic Strategies
-    const strategiesContainer = document.getElementById('diplomaticStrategies');
-    if (strategiesContainer && dashboardData.meetingTools) {
+// Render decision framework
+function renderDecisionFramework() {
+    // Decision Criteria
+    const criteriaContainer = document.getElementById('decisionCriteria');
+    if (criteriaContainer && dashboardData.decisionFramework) {
         let html = '<div class="content-section">';
-        dashboardData.meetingTools.diplomaticStrategies.forEach(strategy => {
+        dashboardData.decisionFramework.decisionCriteria.forEach(item => {
             html += `
                 <div class="pattern-item">
-                    <div class="pattern-title">${strategy.scenario}</div>
-                    <div class="pattern-description">"${strategy.response}"</div>
+                    <div class="pattern-title">${item.criterion}</div>
+                    <div class="pattern-description">${item.description}</div>
+                    <div style="margin-top: 8px; font-size: 13px; color: var(--gray-medium);">
+                        <strong>Evaluation:</strong> ${item.evaluation}
+                    </div>
                 </div>
             `;
         });
         html += '</div>';
-        strategiesContainer.innerHTML = html;
+        criteriaContainer.innerHTML = html;
     }
 
-    // Commitment Framework
-    const commitmentContainer = document.getElementById('commitmentFramework');
-    if (commitmentContainer && dashboardData.meetingTools) {
-        const framework = dashboardData.meetingTools.commitmentFramework;
+    // Accountability Template
+    const accountabilityContainer = document.getElementById('accountabilityTemplate');
+    if (accountabilityContainer && dashboardData.decisionFramework) {
+        const template = dashboardData.decisionFramework.accountabilityTemplate;
         let html = `
             <div class="content-section">
-                <h4>Process Steps</h4>
+                <h4>${template.format}</h4>
+                <div style="margin-bottom: 20px;">
+        `;
+        
+        template.components.forEach(component => {
+            html += `
+                <div class="risk-item">
+                    <div style="flex: 1;">
+                        <strong>${component.role}:</strong> ${component.definition}
+                        <div style="font-size: 13px; color: var(--gray-medium); margin-top: 4px;">
+                            Example: ${component.example}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+                <h4>Tracking Requirements</h4>
                 <ol>
         `;
-        framework.steps.forEach(step => {
-            html += `<li>${step}</li>`;
+        template.tracking.forEach(item => {
+            html += `<li>${item}</li>`;
         });
-        html += `
-                </ol>
-                <h4 style="margin-top: 20px;">Success Metrics</h4>
-                <ul>
-        `;
-        framework.successMetrics.forEach(metric => {
-            html += `<li>${metric}</li>`;
-        });
-        html += '</ul></div>';
-        commitmentContainer.innerHTML = html;
+        html += '</ol></div>';
+        accountabilityContainer.innerHTML = html;
     }
 
-    // Meeting Scripts
-    const scriptsContainer = document.getElementById('meetingScripts');
-    if (scriptsContainer && dashboardData.meetingTools) {
-        const scripts = dashboardData.meetingTools.meetingScripts;
-        scriptsContainer.innerHTML = `
+    // Success Metrics
+    const metricsContainer = document.getElementById('successMetrics');
+    if (metricsContainer && dashboardData.decisionFramework) {
+        const metrics = dashboardData.decisionFramework.successMetrics;
+        let html = `
             <div class="content-section">
-                <div class="module-card">
-                    <div class="module-title">Opening Script</div>
-                    <div class="module-objectives">${scripts.opening}</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-title">Transition Script</div>
-                    <div class="module-objectives">${scripts.transition}</div>
-                </div>
-                <div class="module-card">
-                    <div class="module-title">Closing Script</div>
-                    <div class="module-objectives">${scripts.closing}</div>
-                </div>
-            </div>
+                <h4>Governance Metrics</h4>
         `;
+        
+        metrics.governance.forEach(metric => {
+            html += `
+                <div class="risk-item">
+                    <div style="flex: 1;">
+                        <strong>${metric.metric}</strong>
+                        <div style="font-size: 13px; margin-top: 4px;">
+                            <span style="color: var(--status-success);">Target:</span> ${metric.target}<br>
+                            <span style="color: var(--gray-medium);">Current:</span> ${metric.current}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                <h4 style="margin-top: 20px;">Meeting Effectiveness</h4>
+        `;
+        
+        metrics.meeting.forEach(metric => {
+            html += `
+                <div class="pattern-item">
+                    <div class="pattern-title">${metric.metric}</div>
+                    <div class="pattern-description">${metric.description}</div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        metricsContainer.innerHTML = html;
+    }
+
+    // Meeting Norms
+    const normsContainer = document.getElementById('meetingNorms');
+    if (normsContainer && dashboardData.decisionFramework) {
+        const norms = dashboardData.decisionFramework.meetingNorms;
+        let html = `
+            <div class="content-section">
+                <h4>Agreed Principles</h4>
+        `;
+        
+        norms.principles.forEach(principle => {
+            html += `
+                <div class="module-card">
+                    <div class="module-title">${principle.norm}</div>
+                    <div class="module-objectives">${principle.practice}</div>
+                </div>
+            `;
+        });
+        
+        html += `
+                <h4 style="margin-top: 20px;">Meeting Guidelines</h4>
+                <ul>
+        `;
+        
+        norms.guidelines.forEach(guideline => {
+            html += `<li>${guideline}</li>`;
+        });
+        
+        html += '</ul></div>';
+        normsContainer.innerHTML = html;
     }
 }
 

@@ -294,73 +294,133 @@ const dashboardData = {
         }
     },
 
-    // Meeting Facilitation Tools
-    meetingTools: {
-        talkingPoints: [
+    // Decision Framework
+    decisionFramework: {
+        decisionCriteria: [
             {
-                number: 1,
-                title: "Open with Their Goals",
-                content: "I want to support your risk management objectives, and I'm observing patterns that may merit our attention to ensure we're achieving our governance goals effectively."
+                criterion: "Risk Impact",
+                description: "How does this decision affect our organizational risk profile?",
+                evaluation: "High/Medium/Low impact on risk register items"
             },
             {
-                number: 2,
-                title: "Address Decision Momentum",
-                content: "When we extend discussions on high-priority items, we're making a choice about our risk posture. I want to ensure that's an intentional decision aligned with our risk tolerance."
+                criterion: "Resource Requirements",
+                description: "What resources (time, budget, staff) are needed?",
+                evaluation: "Clearly defined resource needs with budget impact"
             },
             {
-                number: 3,
-                title: "Reference Their Language",
-                content: "As Claire noted, we've been 'talking about the same thing for three meetings.' What would help us move from analysis to decision?"
+                criterion: "Timeline Urgency",
+                description: "What are the consequences of delaying this decision?",
+                evaluation: "Specific impacts of 30/60/90 day delays"
             },
             {
-                number: 4,
-                title: "Seek Commitment",
-                content: "I'd like each owner to confirm their commitment to these timelines. If any dates aren't realistic, let's adjust them now, then hold to what we agree on."
+                criterion: "Stakeholder Readiness",
+                description: "Do we have the right people and information to decide?",
+                evaluation: "Required stakeholders identified and consulted"
+            },
+            {
+                criterion: "Success Measurement",
+                description: "How will we know if this decision was successful?",
+                evaluation: "Clear, measurable success metrics defined"
             }
         ],
 
-        diplomaticStrategies: [
-            {
-                scenario: "If they resist timelines",
-                response: "I understand the desire for thorough analysis. What additional information do you need to make a confident decision?"
-            },
-            {
-                scenario: "If discussion stalls on AI Policy",
-                response: "We've identified Gemini as the preferred path in multiple meetings. What specific concerns need resolution before we can document this decision?"
-            },
-            {
-                scenario: "If Vinton decision is deferred",
-                response: "Risk committee meets Friday. Can we commit to a documented decision by Monday?"
-            },
-            {
-                scenario: "If stakeholders are missing",
-                response: "Can we establish interim decision authority while we coordinate with additional stakeholders?"
-            }
-        ],
-
-        commitmentFramework: {
-            steps: [
-                "Review each priority item with clear decision needed",
-                "Identify specific owner(s) for each decision",
-                "Establish realistic but firm target dates",
-                "Define measurable success metrics",
-                "Document commitments in meeting recap",
-                "Schedule follow-up accountability check-ins"
+        accountabilityTemplate: {
+            format: "RACI Matrix for Decision Implementation",
+            components: [
+                {
+                    role: "Responsible",
+                    definition: "Person(s) who will do the work",
+                    example: "Bill Reese for technical implementation"
+                },
+                {
+                    role: "Accountable",
+                    definition: "Person ultimately answerable for delivery",
+                    example: "Claire Brown for policy compliance"
+                },
+                {
+                    role: "Consulted",
+                    definition: "People whose input is needed",
+                    example: "Legal, HR, affected departments"
+                },
+                {
+                    role: "Informed",
+                    definition: "People who need to know the outcome",
+                    example: "All staff for policy changes"
+                }
             ],
-            successMetrics: [
-                "Each priority item has confirmed owner and date",
-                "Resistance addressed with specific next steps",
-                "Meeting ends with written commitments",
-                "Follow-up actions are clear and documented"
+            tracking: [
+                "Decision logged with date and rationale",
+                "Owner confirmed and accepts accountability",
+                "Timeline established with specific milestones",
+                "Check-in schedule defined (weekly/biweekly)",
+                "Success metrics documented and agreed"
             ]
         },
 
-        meetingScripts: {
-            opening: `Good morning everyone. As we review our IT governance priorities today, I want to focus on moving from discussion to decision on several critical items that impact our risk posture.`,
-            
-            transition: `Let's move to our next priority item. We've discussed this previously, and I'd like to identify what specific information or authority we need to make a decision today.`,
-            
-            closing: `Thank you all for your commitments today. I'll send a recap within 24 hours documenting our decisions and timelines. Our next check-in will focus on progress against these commitments.`
+        successMetrics: {
+            governance: [
+                {
+                    metric: "Decision Velocity",
+                    target: "Priority items resolved within 2 meetings",
+                    current: "Average 3+ meetings per decision"
+                },
+                {
+                    metric: "Commitment Follow-Through",
+                    target: "90% of commitments met on time",
+                    current: "To be measured going forward"
+                },
+                {
+                    metric: "Risk Mitigation Progress",
+                    target: "Reduce top 5 risks by 25% in 6 months",
+                    current: "AI Governance at 17% mitigation"
+                }
+            ],
+            meeting: [
+                {
+                    metric: "Action Items Completed",
+                    description: "Percentage of action items completed by next meeting"
+                },
+                {
+                    metric: "Decision Documentation",
+                    description: "All decisions documented with rationale within 24 hours"
+                },
+                {
+                    metric: "Stakeholder Attendance",
+                    description: "Required decision-makers present for critical items"
+                }
+            ]
+        },
+
+        meetingNorms: {
+            principles: [
+                {
+                    norm: "Decision-First Mindset",
+                    practice: "Each agenda item should result in a decision or specific next steps with owners and dates"
+                },
+                {
+                    norm: "Time-boxed Discussions",
+                    practice: "Set time limits for each topic; if more time needed, identify what's blocking decision"
+                },
+                {
+                    norm: "Documentation Standard",
+                    practice: "All decisions recorded with rationale, owner, timeline, and success criteria"
+                },
+                {
+                    norm: "Accountability Check-ins",
+                    practice: "Begin each meeting reviewing commitments from previous meeting"
+                },
+                {
+                    norm: "Risk-Aware Decision Making",
+                    practice: "Consider risk impact for all significant decisions"
+                }
+            ],
+            guidelines: [
+                "Come prepared with pre-read materials reviewed",
+                "Identify decision authority before discussing",
+                "Escalate blockers immediately, not at deadlines",
+                "Celebrate completed commitments and learn from delays",
+                "Focus on outcomes, not just activities"
+            ]
         }
     }
 };
