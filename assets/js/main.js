@@ -318,8 +318,8 @@ function renderBriefContent() {
             <div class="content-section">
                 <p>${dashboardData.briefContent.executiveSummary}</p>
                 <div style="margin-top: 20px;">
-                    <a href="downloads/ceo-leadership-brief.md" download class="download-btn">
-                        📊 Download Executive Brief
+                    <a href="https://drive.google.com/file/d/1W2IFguXt7ljw4olwwWwS_pbiTAGhCPOm/view?usp=drive_link" target="_blank" class="download-btn">
+                        📊 View Executive Brief (PDF)
                     </a>
                 </div>
             </div>
@@ -414,8 +414,8 @@ function renderTrainingContent() {
         });
         html += `
             <div style="margin-top: 20px;">
-                <a href="downloads/ceo-training-outline.md" download class="download-btn">
-                    🎓 Download Training Program Outline
+                <a href="https://drive.google.com/file/d/1VTKQRSOwNh27mKMqrU4cRM1HnCv7EgkP/view?usp=drive_link" target="_blank" class="download-btn">
+                    🎓 View Training Program Outline (PDF)
                 </a>
             </div>
         </div>`;
