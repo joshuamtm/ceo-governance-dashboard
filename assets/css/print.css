@@ -1,0 +1,360 @@
+/* CEO IT Governance Dashboard - Print Styles */
+
+@media print {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide navigation and interactive elements */
+    .nav,
+    .nav-btn,
+    button,
+    .footer {
+        display: none !important;
+    }
+
+    /* Header adjustments */
+    .header {
+        position: static;
+        box-shadow: none;
+        border-bottom: 2pt solid #000;
+        margin-bottom: 20pt;
+        page-break-after: avoid;
+    }
+
+    .header-content {
+        padding: 10pt 0;
+        border-bottom: 1pt solid #ccc;
+    }
+
+    .header-title {
+        font-size: 18pt;
+        font-weight: bold;
+        margin-bottom: 6pt;
+    }
+
+    .header-meta {
+        font-size: 10pt;
+        color: #333;
+    }
+
+    /* Section display */
+    .section {
+        display: block !important;
+        page-break-before: always;
+        margin-bottom: 20pt;
+    }
+
+    .section:first-child {
+        page-break-before: avoid;
+    }
+
+    .section-header {
+        border-bottom: 1pt solid #000;
+        margin-bottom: 15pt;
+        page-break-after: avoid;
+    }
+
+    .section-header h2 {
+        font-size: 14pt;
+        font-weight: bold;
+        margin-bottom: 5pt;
+    }
+
+    /* Risk and status indicators */
+    .risk-indicator,
+    .status-badge {
+        background: none !important;
+        color: #000 !important;
+        border: 1pt solid #000;
+        padding: 2pt 6pt;
+        font-size: 9pt;
+        font-weight: bold;
+    }
+
+    /* Tables */
+    .priority-table-wrapper {
+        box-shadow: none;
+        border: 1pt solid #000;
+        margin-bottom: 15pt;
+    }
+
+    .priority-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 9pt;
+    }
+
+    .priority-table thead {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+    }
+
+    .priority-table th,
+    .priority-table td {
+        border: 0.5pt solid #ccc;
+        padding: 4pt;
+        text-align: left;
+    }
+
+    .priority-table th {
+        font-weight: bold;
+        font-size: 9pt;
+    }
+
+    .priority-badge {
+        background: none !important;
+        color: #000 !important;
+        border: 1pt solid #000;
+        font-weight: bold;
+    }
+
+    .status-indicator {
+        background: none !important;
+        color: #000 !important;
+        border: 1pt solid #000;
+        padding: 1pt 4pt;
+        font-size: 8pt;
+    }
+
+    .status-indicator.stuck::before {
+        content: '[STUCK] ';
+    }
+
+    .status-indicator.in-progress::before {
+        content: '[IN PROGRESS] ';
+    }
+
+    .status-indicator.complete::before {
+        content: '[COMPLETE] ';
+    }
+
+    /* Cards and content containers */
+    .card {
+        border: 1pt solid #000;
+        padding: 10pt;
+        margin-bottom: 10pt;
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .card-title {
+        font-size: 11pt;
+        font-weight: bold;
+        border-bottom: 1pt solid #000;
+        padding-bottom: 4pt;
+        margin-bottom: 8pt;
+    }
+
+    /* Grid layouts */
+    .dashboard-grid,
+    .policy-container,
+    .brief-container,
+    .training-container,
+    .tools-container {
+        display: block;
+    }
+
+    .dashboard-grid .card,
+    .policy-container .card,
+    .brief-container .card,
+    .training-container .card,
+    .tools-container .card {
+        width: 100%;
+        margin-bottom: 10pt;
+    }
+
+    /* Quotes */
+    .quote-item {
+        background: #f9f9f9 !important;
+        border-left: 2pt solid #000;
+        padding: 8pt;
+        margin-bottom: 8pt;
+        page-break-inside: avoid;
+    }
+
+    .quote-text {
+        font-style: italic;
+        font-size: 10pt;
+        margin-bottom: 4pt;
+    }
+
+    .quote-attribution,
+    .quote-context {
+        font-size: 9pt;
+        color: #333;
+    }
+
+    /* Risk items */
+    .risk-item {
+        background: #f9f9f9 !important;
+        border: 0.5pt solid #000;
+        padding: 6pt;
+        margin-bottom: 6pt;
+        page-break-inside: avoid;
+    }
+
+    .risk-rank {
+        background: none !important;
+        color: #000 !important;
+        border: 1pt solid #000;
+        font-weight: bold;
+    }
+
+    .risk-score {
+        font-size: 12pt;
+        font-weight: bold;
+    }
+
+    /* Pattern items */
+    .pattern-item {
+        background: #f9f9f9 !important;
+        border: 0.5pt solid #000;
+        padding: 6pt;
+        margin-bottom: 6pt;
+        page-break-inside: avoid;
+    }
+
+    /* Module cards */
+    .module-card {
+        background: #f9f9f9 !important;
+        border-left: 2pt solid #000;
+        padding: 8pt;
+        margin-bottom: 8pt;
+        page-break-inside: avoid;
+    }
+
+    /* Talking points */
+    .talking-point {
+        border: 1pt solid #000;
+        padding: 8pt;
+        margin-bottom: 8pt;
+        page-break-inside: avoid;
+    }
+
+    .point-number {
+        background: none !important;
+        color: #000 !important;
+        border: 1pt solid #000;
+        font-weight: bold;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        padding: 2pt 4pt;
+    }
+
+    /* Lists */
+    ul {
+        margin-left: 15pt;
+        margin-bottom: 8pt;
+    }
+
+    li {
+        font-size: 10pt;
+        margin-bottom: 3pt;
+    }
+
+    /* Text adjustments */
+    p {
+        font-size: 10pt;
+        margin-bottom: 6pt;
+        text-align: justify;
+    }
+
+    h3 {
+        font-size: 11pt;
+        font-weight: bold;
+        margin-top: 8pt;
+        margin-bottom: 6pt;
+        page-break-after: avoid;
+    }
+
+    h4 {
+        font-size: 10pt;
+        font-weight: bold;
+        margin-top: 6pt;
+        margin-bottom: 4pt;
+        page-break-after: avoid;
+    }
+
+    /* Links */
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #666;
+    }
+
+    /* Page breaks */
+    .page-break {
+        page-break-before: always;
+    }
+
+    .no-break {
+        page-break-inside: avoid;
+    }
+
+    /* Hide interactive elements */
+    .loading,
+    .loading::after {
+        display: none !important;
+    }
+
+    /* Ensure important content is visible */
+    .priority-table-wrapper,
+    .quotes-container,
+    .risk-container,
+    .patterns-container,
+    .policy-content,
+    .brief-content,
+    .training-content,
+    .tools-content {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Footer for print */
+    @page {
+        margin: 0.75in;
+        size: letter portrait;
+    }
+
+    @page:first {
+        margin-top: 0.5in;
+    }
+
+    /* Page numbers */
+    .page-number {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        font-size: 9pt;
+        color: #666;
+    }
+
+    .page-number::after {
+        counter-increment: page;
+        content: "Page " counter(page);
+    }
+}

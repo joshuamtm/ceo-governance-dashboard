@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO IT Governance Dashboard</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/print.css" media="print">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-title">CEO IT Governance Dashboard</h1>
+                <div class="header-meta">
+                    <span class="header-date">August 25, 2025</span>
+                    <span class="header-owner">Joshua Peskay, vCISO</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-section="dashboard">Priority Dashboard</button>
+                <button class="nav-btn" data-section="policy">AI Policy Draft</button>
+                <button class="nav-btn" data-section="brief">Leadership Brief</button>
+                <button class="nav-btn" data-section="training">Training Outline</button>
+                <button class="nav-btn" data-section="tools">Meeting Tools</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- Priority Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section-header">
+                    <h2>Priority Decision Tracking</h2>
+                    <div class="risk-indicator">
+                        <span class="risk-label">Top Risk:</span>
+                        <span class="risk-value">#2 - Insufficient AI Governance (20.8 residual, 17% mitigated)</span>
+                    </div>
+                </div>
+
+                <div class="priorities-container">
+                    <div id="priorityTable" class="priority-table-wrapper">
+                        <!-- Priority table will be rendered here -->
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3 class="card-title">Key Context</h3>
+                        <div id="keyQuotes" class="quotes-container">
+                            <!-- Key quotes will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Risk Register Impact</h3>
+                        <div id="riskContext" class="risk-container">
+                            <!-- Risk context will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Decision Patterns</h3>
+                        <div id="patterns" class="patterns-container">
+                            <!-- Patterns will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Policy Draft Section -->
+            <section id="policy" class="section">
+                <div class="section-header">
+                    <h2>AI Acceptable Use Policy</h2>
+                    <div class="status-badge">Ready for Approval</div>
+                </div>
+
+                <div class="policy-container">
+                    <div class="card">
+                        <h3 class="card-title">Policy Overview</h3>
+                        <div id="policyOverview" class="policy-content">
+                            <!-- Policy overview will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Implementation Requirements</h3>
+                        <div id="policyImplementation" class="policy-content">
+                            <!-- Implementation details will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Compliance Framework</h3>
+                        <div id="policyCompliance" class="policy-content">
+                            <!-- Compliance framework will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leadership Brief Section -->
+            <section id="brief" class="section">
+                <div class="section-header">
+                    <h2>Executive Leadership Brief</h2>
+                    <div class="status-badge">Business Case for AI Governance</div>
+                </div>
+
+                <div class="brief-container">
+                    <div class="card">
+                        <h3 class="card-title">Executive Summary</h3>
+                        <div id="execSummary" class="brief-content">
+                            <!-- Executive summary will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Current State Challenges</h3>
+                        <div id="currentChallenges" class="brief-content">
+                            <!-- Current challenges will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Business Benefits</h3>
+                        <div id="businessBenefits" class="brief-content">
+                            <!-- Business benefits will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Resource Requirements</h3>
+                        <div id="resourceRequirements" class="brief-content">
+                            <!-- Resource requirements will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Training Outline Section -->
+            <section id="training" class="section">
+                <div class="section-header">
+                    <h2>AI Training Program</h2>
+                    <div class="status-badge">Four-Module Comprehensive Program</div>
+                </div>
+
+                <div class="training-container">
+                    <div class="card">
+                        <h3 class="card-title">Module Structure</h3>
+                        <div id="trainingModules" class="training-content">
+                            <!-- Training modules will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Assessment Framework</h3>
+                        <div id="assessmentFramework" class="training-content">
+                            <!-- Assessment framework will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Implementation Plan</h3>
+                        <div id="trainingImplementation" class="training-content">
+                            <!-- Implementation plan will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Success Metrics</h3>
+                        <div id="trainingMetrics" class="training-content">
+                            <!-- Success metrics will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meeting Tools Section -->
+            <section id="tools" class="section">
+                <div class="section-header">
+                    <h2>Meeting Facilitation Tools</h2>
+                    <div class="status-badge">Diplomatic Decision Drivers</div>
+                </div>
+
+                <div class="tools-container">
+                    <div class="card">
+                        <h3 class="card-title">Talking Points</h3>
+                        <div id="talkingPoints" class="tools-content">
+                            <!-- Talking points will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Diplomatic Strategies</h3>
+                        <div id="diplomaticStrategies" class="tools-content">
+                            <!-- Diplomatic strategies will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Commitment Framework</h3>
+                        <div id="commitmentFramework" class="tools-content">
+                            <!-- Commitment framework will be rendered here -->
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Meeting Scripts</h3>
+                        <div id="meetingScripts" class="tools-content">
+                            <!-- Meeting scripts will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">CEO IT Governance Dashboard v1.0 | Last Updated: <span id="lastUpdated"></span></p>
+        </footer>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
