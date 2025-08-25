@@ -426,4 +426,4 @@ const dashboardData = {
 };
 
 // Last updated timestamp
-dashboardData.lastUpdated = "August 25, 2025";
+dashboardData.lastUpdated = "August 25, 2025 (v1.1)";
