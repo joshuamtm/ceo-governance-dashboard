@@ -5,72 +5,87 @@ const dashboardData = {
     priorityItems: [
         {
             priority: 1,
-            item: "AI Policy Implementation",
-            currentStatus: "AI policy ratified in 2024... still in early stages with growth to come",
-            statusType: "stuck",
-            decision: "Approve Gemini/Notebook LM policy & training plan",
-            owner: "Claire + Bill",
-            targetDate: "Sept 8",
-            successMetric: "Policy published, training launched"
+            item: "Gemini Rollout & ChatGPT Sunset",
+            currentStatus: "ChatGPT termination notice due Oct 1 for Nov 1 sunset; Gemini rollout planning underway",
+            statusType: "urgent",
+            decision: "Approve phased Gemini rollout plan with Gmail-only initial deployment",
+            owner: "Claire + Bill + Dane",
+            targetDate: "Sept 20",
+            successMetric: "Gemini training completed for initial 70 users by Sept 20"
         },
         {
             priority: 1,
-            item: "Vinton Risk Decision",
-            currentStatus: "would have to go to risk committee... they're going to meet, I think they're supposed to meet this Friday",
+            item: "Google Drive Access Control Audit",
+            currentStatus: "Security audit needed before enabling Gemini for Drive to prevent data exposure",
+            statusType: "critical",
+            decision: "Complete access control audit and remediation plan",
+            owner: "James + Ryan",
+            targetDate: "Sept 15",
+            successMetric: "Audit complete with documented access controls"
+        },
+        {
+            priority: 1,
+            item: "AI Working Group Reestablishment",
+            currentStatus: "Group non-functional; needs to be reestablished under IT Governance Committee",
             statusType: "stuck",
-            decision: "Go/No-Go with documented rationale",
-            owner: "Yuri + Risk Committee",
+            decision: "Reestablish working group with clear charter and decision authority",
+            owner: "Dane (lead) + Bill",
             targetDate: "Sept 8",
-            successMetric: "Written decision with next steps"
+            successMetric: "First meeting held with documented charter"
         },
         {
             priority: 2,
-            item: "IT Governance Structure",
-            currentStatus: "currently being overhauled in view of IT governance structures",
+            item: "Anthropic Partnership Decision",
+            currentStatus: "6-month trial request pending; leadership pressure for partnership",
             statusType: "in-progress",
-            decision: "Define committee structure & meeting cadence",
-            owner: "Bill + Claire",
+            decision: "Define use cases and governance for Anthropic trial",
+            owner: "Bill + Yuri + Dane",
             targetDate: "Sept 15",
-            successMetric: "Published governance framework"
+            successMetric: "Written decision with approved use cases"
         },
         {
             priority: 2,
-            item: "Crosswalk Project Scope",
-            currentStatus: "we don't have all the stakeholders here... maybe we need to pull up that internal media",
-            statusType: "stuck",
-            decision: "Clarify requirements & budget authority",
-            owner: "Bill + Yuri",
-            targetDate: "Sept 15",
-            successMetric: "Approved project charter"
+            item: "AI Policy Update & Training",
+            currentStatus: "Policy needs update to address AI tools specifically; training materials incomplete",
+            statusType: "in-progress",
+            decision: "Approve updated policy addendum and comprehensive training program",
+            owner: "Joshua + Claire",
+            targetDate: "Sept 8",
+            successMetric: "Updated policy published with training launched"
         },
         {
             priority: 3,
-            item: "Third-Party Risk Process",
-            currentStatus: "we need to do a better job of vetting stuff before it goes to you",
-            statusType: "in-progress",
-            decision: "Define intake & approval workflow",
-            owner: "Joshua + Bill",
-            targetDate: "Sept 22",
-            successMetric: "Documented process with templates"
+            item: "Vinton Security Assessment",
+            currentStatus: "Request pending security review; needs proper vetting process",
+            statusType: "stuck",
+            decision: "Complete security assessment and Go/No-Go decision",
+            owner: "Joshua + IT Team",
+            targetDate: "Sept 15",
+            successMetric: "Security assessment documented with recommendation"
         }
     ],
 
     // Key Quotes from Leadership
     keyQuotes: [
         {
-            text: "feels like we've been talking about the same thing for, like, three meetings now. So just let us know what we can do to support to make sure we're, like, moving forward on the right track.",
-            attribution: "Claire Brown, Legal & Compliance",
-            context: "Opportunity to accelerate decision-making on AI policy"
+            text: "Water is going to find a way downhill... the question is not whether AI is going to be in use at CEO, the question is how we shape and manage it.",
+            attribution: "Joshua Peskay, vCISO",
+            context: "August 21 meeting - AI adoption inevitability"
         },
         {
-            text: "I think we need to do a better job of vetting stuff before it goes to you, because some things shouldn't be this far along until they've gotten an internal, a better internal vetting, like a kicking of the tires.",
-            attribution: "Bill Reese, IT Director",
-            context: "Recognition of process improvement opportunity"
+            text: "We're worried about three or four different platforms all at the same time... we need somebody who has the driver's license to sit in the driver's seat.",
+            attribution: "Yuri Okumura, Legal",
+            context: "August 21 meeting - Need for consolidated AI governance"
         },
         {
-            text: "AI tools offer tremendous productivity gains, potentially if used effectively",
-            attribution: "Leadership Team Consensus",
-            context: "Shared vision for AI enablement"
+            text: "Between 50% and 80% of the 630 staff not using ChatGPT are probably using AI without our knowledge.",
+            attribution: "Joshua Peskay, vCISO",
+            context: "August 21 meeting - Shadow AI usage reality"
+        },
+        {
+            text: "CEO must first audit and validate appropriate Google Drive access controls before enabling Gemini for Drive.",
+            attribution: "Joshua Peskay, vCISO",
+            context: "August 26 email - Critical security requirement"
         }
     ],
 
@@ -122,26 +137,29 @@ const dashboardData = {
     // AI Policy Content
     policyContent: {
         overview: {
-            title: "Policy Purpose",
-            content: `This policy establishes guidelines for safe and effective use of AI tools at Center for Employment Opportunities. 
-            The policy enables broader, safer AI adoption while maintaining security controls and addressing our #2 organizational risk.`,
-            effectiveDate: "September 15, 2025",
-            replaces: "ChatGPT License Ethics Pledge (Dec 2024)"
+            title: "AI Tool Usage Policy - DRAFT ADDENDUM",
+            content: `This addendum to the Data Privacy and Information Security Policy establishes comprehensive guidelines for AI tool usage at CEO. 
+            It enables controlled AI adoption while maintaining security and compliance standards, addressing our #2 organizational risk.`,
+            effectiveDate: "Target: September 20, 2025",
+            replaces: "Updates existing Data Privacy and Information Security Policy (Oct 2023)",
+            status: "DRAFT - Pending IT Governance Committee Approval"
         },
         approvedTools: {
             primary: [
                 {
-                    name: "Gemini (Google Workspace Integration)",
-                    description: "Primary AI assistant for CEO staff",
-                    access: "Training-gated through Google Workspace"
-                },
-                {
-                    name: "Notebook LM",
-                    description: "Document analysis and synthesis tool",
-                    access: "Training-gated through Google Workspace"
+                    name: "Gemini (within Google Workspace ONLY)",
+                    description: "Primary AI assistant - Initially Gmail only, Drive pending audit",
+                    access: "Training-gated through organizational units (OUs)"
                 }
             ],
-            transition: "Existing ChatGPT Enterprise users transition to Gemini by December 1, 2025"
+            future: [
+                {
+                    name: "Anthropic Claude (6-month trial)",
+                    description: "Limited to IT team and BAMs for specific use cases",
+                    access: "Pending use case definition and governance framework"
+                }
+            ],
+            transition: "ChatGPT sunset by November 1, 2025 (termination notice due October 1)"
         },
         dataGuidelines: {
             permitted: [
@@ -159,21 +177,34 @@ const dashboardData = {
         implementation: {
             phases: [
                 {
-                    phase: "Foundation",
-                    dates: "September 2025",
-                    activities: "Policy approval, training program launch, pilot group (25 users)"
+                    phase: "Immediate Actions",
+                    dates: "By September 20, 2025",
+                    activities: "Complete Google Drive audit, train initial 70 ChatGPT users on Gemini, establish AI Working Group"
                 },
                 {
-                    phase: "Rollout",
-                    dates: "October-November 2025",
-                    activities: "Department-by-department expansion to all staff"
+                    phase: "ChatGPT Transition",
+                    dates: "September 20 - October 1, 2025",
+                    activities: "Submit ChatGPT termination notice, complete GPT to Gems migration, Gmail-only Gemini deployment"
                 },
                 {
-                    phase: "Transition",
+                    phase: "Controlled Expansion",
+                    dates: "October - November 2025",
+                    activities: "Expand Gemini access based on training completion, monitor usage patterns, assess Anthropic trial"
+                },
+                {
+                    phase: "Full Deployment",
                     dates: "December 2025",
-                    activities: "ChatGPT sunset, policy effectiveness review"
+                    activities: "Enable Gemini for Drive (post-audit), complete staff training, quarterly effectiveness review"
                 }
-            ]
+            ],
+            criticalDates: {
+                "Sept 8": "AI Working Group first meeting",
+                "Sept 15": "Google Drive audit complete",
+                "Sept 20": "Initial 70 users trained on Gemini",
+                "Oct 1": "ChatGPT termination notice deadline",
+                "Nov 1": "ChatGPT access ends",
+                "Dec 1": "Target for full Gemini deployment"
+            }
         }
     },
 
@@ -245,39 +276,43 @@ const dashboardData = {
                 objectives: [
                     "Understand AI capabilities and limitations",
                     "Learn CEO's strategic approach to AI",
-                    "Overview of approved tools and access"
+                    "Overview of approved tools (Gemini in Google Workspace)"
                 ],
-                activities: "Interactive assessments, tool demonstrations, leadership message"
+                activities: "Interactive assessments, tool demonstrations, leadership message",
+                keyPoints: "AI is inevitable - we must shape its use; Only CEO-licensed enterprise platforms allowed"
             },
             {
-                title: "Module 2: Data Handling & Privacy",
+                title: "Module 2: Data Classification & What Can/Cannot Be Input",
                 duration: "20 minutes",
                 objectives: [
-                    "Apply data classification in AI use",
-                    "Understand platform restrictions",
-                    "Recognize when to seek guidance"
+                    "Understand PII handling in approved AI platforms",
+                    "Learn data classification rules that apply to AI",
+                    "Recognize restricted data types (legal holds, external systems)"
                 ],
-                activities: "15 realistic scenarios, decision tree exercises, case studies"
+                activities: "15 realistic scenarios, decision tree exercises, case studies",
+                keyPoints: "PII allowed ONLY in approved enterprise AI with security controls; Never use personal/consumer AI tools"
             },
             {
-                title: "Module 3: Output Validation & Critical Thinking",
+                title: "Module 3: Output Validation & Preventing AI Hallucinations",
                 duration: "15 minutes",
                 objectives: [
-                    "Develop skills to evaluate AI outputs",
-                    "Learn verification techniques",
-                    "Identify when not to trust AI"
+                    "Critical evaluation of AI-generated content",
+                    "Verification techniques for accuracy",
+                    "When NOT to use AI (legal, medical, financial advice)"
                 ],
-                activities: "Accuracy assessment, source verification, error identification"
+                activities: "Hallucination detection exercises, fact-checking practice",
+                keyPoints: "All AI outputs must be validated before official use; Never use for final decisions without human review"
             },
             {
-                title: "Module 4: Practical Applications & Best Practices",
+                title: "Module 4: Transparency Requirements & GPT to Gems Migration",
                 duration: "10 minutes",
                 objectives: [
-                    "Apply AI tools in daily work",
-                    "Learn effective prompting techniques",
-                    "Understand transparency guidelines"
+                    "When and how to disclose AI use",
+                    "Migrate custom GPTs to Gemini Gems",
+                    "Effective prompting techniques"
                 ],
-                activities: "Prompt writing, use case practice, troubleshooting"
+                activities: "GPT migration walkthrough, transparency scenarios",
+                keyPoints: "Disclose AI use when transparency matters to stakeholders; ChatGPT users must transition by Nov 1"
             }
         ],
         assessment: {
@@ -426,4 +461,4 @@ const dashboardData = {
 };
 
 // Last updated timestamp
-dashboardData.lastUpdated = "August 25, 2025 (v1.1)";
+dashboardData.lastUpdated = "August 28, 2025 (v1.2) - Updated with GRC vCISO Check-in and Policy Drafts";
